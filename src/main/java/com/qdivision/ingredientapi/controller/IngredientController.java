@@ -1,5 +1,6 @@
 package com.qdivision.ingredientapi.controller;
 
+import com.qdivision.ingredientapi.EmojiClient;
 import com.qdivision.ingredientapi.entity.IngredientEntity;
 import com.qdivision.ingredientapi.repository.IngredientRepository;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,8 @@ public class IngredientController {
 
   @PostMapping("/ingredients")
   public void postIngredient(@RequestBody IngredientEntity ingredient) {
+    System.out.println("Creating ingredient: " + ingredient);
+    EmojiClient.createEmoji(ingredient.getName(), ingredient.getEmoji());
     ingredientRepository.save(ingredient);
   }
 
