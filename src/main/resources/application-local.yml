@@ -2,7 +2,7 @@ spring:
 #  jpa:
 #    show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5001/fooddb
+    url: jdbc:postgresql://localhost:5001/ingredientdb
   rabbitmq:
     host: localhost
     port: 5003
