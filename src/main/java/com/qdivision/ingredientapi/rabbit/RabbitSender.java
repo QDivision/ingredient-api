@@ -19,6 +19,8 @@ public class RabbitSender {
     String exchangeName = RabbitConnection.TOPIC_EXCHANGE_NAME;
     String routingKey = RabbitConnection.RESPONSE_ROUTING_KEY;
     String message = new ObjectMapper().writeValueAsString(rawMessage);
+
+    System.out.println("Sending message to RabbitMQ: " + message);
     rabbitTemplate.convertAndSend(exchangeName, routingKey, message);
   }
 

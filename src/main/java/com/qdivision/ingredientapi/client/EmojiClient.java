@@ -10,6 +10,8 @@ import org.springframework.web.client.RestTemplate;
 public class EmojiClient {
 
   public static void createEmoji(String name, String emoji) {
+    System.out.println("POSTing emoji: " + name);
+
     RestTemplate restTemplate = new RestTemplate();
 
     HttpEntity request = new HttpEntity(new Emoji(emoji));

@@ -19,7 +19,7 @@ public class RabbitReceiver {
   @SneakyThrows
   public void receiveMessage(String rawMessage) {
     IngredientRequest request = new ObjectMapper().readValue(rawMessage, IngredientRequest.class);
-    System.out.println("REQUEST: " + request);
+    System.out.println("Got response from RabbitMQ: " + request);
 
     boolean exists = ingredientRepository.existsByName(request.getName());
 
